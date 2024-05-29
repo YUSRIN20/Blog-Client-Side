@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom';
 import Register from './pages/Register';
 import Login from './pages/Login';
@@ -9,14 +9,26 @@ import Home from './pages/Home';
 import './style.scss'
 const App = () => {
   const location  = useLocation();
-  // const authPages = ['/login','/register']
+  const [loading,setLoading]  = useState(true)
   
+  useEffect(() => {
+    // Simulating loading delay
+    const timeout = setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+
+    return () => clearTimeout(timeout);
+  }, []);
+
   const isAuthPage = location.pathname === '/login' || location.pathname === '/register';
   // console.log(isAuthPage)
 
   return (
     <div className={`app ${isAuthPage ? 'authApp': ''}`}>
       <div className={`container ${isAuthPage ? 'authContainer': ''}`}>
+         {loading ?(
+         <div class="spinner"></div>
+         ):(
           <Routes>
             <Route path='/' element={<Layout />} >
               <Route index element={<Home />} />
@@ -26,6 +38,7 @@ const App = () => {
             <Route path='/register' element={<Register />} />
             <Route path='/login' element={<Login />} />
           </Routes>
+        )}
       </div>
     </div>
   );

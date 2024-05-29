@@ -5,16 +5,20 @@ import { Link, useLocation } from 'react-router-dom';
 const Home = () => {
 
     const [posts, setPosts] = useState([])
-    
+    const [isLoading,setIsLoading] = useState(false)
     const cat  = useLocation().search
 
     useEffect(() => {
         const fetchData = async () => {
             try {
+                setIsLoading(true)
+                // const res = await axios.get(`http://localhost:8800/api/posts${cat}`)
                 const res = await axios.get(`https://blog-api-side.onrender.com/api/posts${cat}`)
                 setPosts(res.data)
             } catch (err) {
                 console.log(err);
+            }finally{
+                setIsLoading(false)
             }
         };
         fetchData();
