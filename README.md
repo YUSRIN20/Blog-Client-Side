@@ -70,11 +70,11 @@ This project is the frontend for the SimpleBlog application, a blog platform all
 
 ### Frontend Deployment
 
-The frontend is deployed and can be accessed at: [SimpleBlog Frontend on Netlify](https://simpleblog-website.netlify.app)
+The frontend is deployed and can be accessed at: [Blog Frontend on Netlify](https://simpleblog-website.netlify.app)
 
 ### Backend Repository and Deployment
 
-The backend code for this application can be found at: [SimpleBlog Backend Repository](https://github.com/YUSRIN20/Blog-Api-Side.git)
+The backend code for this application can be found at: [Blog Backend Repository](https://github.com/YUSRIN20/Blog-Api-Side.git)
 
 ## License
 
