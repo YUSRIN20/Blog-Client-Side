@@ -7,6 +7,7 @@ import Single from './pages/Single';
 import Layout from './pages/Layout';
 import Home from './pages/Home';
 import './style.scss'
+import './App.css'
 const App = () => {
   const location  = useLocation();
   const [loading,setLoading]  = useState(true)
@@ -25,9 +26,9 @@ const App = () => {
 
   return (
     <div className={`app ${isAuthPage ? 'authApp': ''}`}>
-      <div className={`container ${isAuthPage ? 'authContainer': ''}`}>
+      <div className={`Container ${isAuthPage ? 'authContainer': ''}`}>
          {loading ?(
-         <div class="spinner"></div>
+         <div class="loader"></div>
          ):(
           <Routes>
             <Route path='/' element={<Layout />} >

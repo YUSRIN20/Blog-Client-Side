@@ -18,19 +18,18 @@ body {
 
     }
 
-    .container {
+    .Container {
         width: 1024px;
 
         &.authContainer{
-        width: 100%;
-
+            width: 100%;
         } 
-        .spinner {
+        .loader {
             border: 16px solid #f3f3f3; /* Light grey */
-            border-top: 16px solid #3498db; /* Blue */
+            border-top: 16px solid teal; /* Blue */
             border-radius: 50%;
-            width: 4rem;
-            height: 4rem;
+            width: 5rem;
+            height: 5rem;
             animation: spin 2s linear infinite;
             margin: auto;
             position: absolute;
@@ -126,6 +125,7 @@ body {
 
                 span {
                     cursor: pointer;
+                    text-transform: capitalize;
                 }
 
                 .write {
@@ -191,7 +191,7 @@ body {
                         &::after {
                             content: "";
                             width: 100%;
-                            height: 100%;
+                            height: 250px;
                             background-color: $lightGreen;
                             position: absolute;
                             top: 20px;
